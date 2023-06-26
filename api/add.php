@@ -15,6 +15,14 @@ switch($table){
     case 'ad':
         $data['text']=$_POST['text'];
     break;
+    case "admin":        
+        $data['acc']=$_POST['acc'];
+        $data['pw']=$_POST['pw'];
+    break;
+    case 'menu':
+        $data['text']=$_POST['text'];
+        $data['href']=$_POST['href'];
+    break;
 }
 
 /* if($table==$title){
@@ -23,7 +31,9 @@ switch($table){
     $data['sh']=1;
 } */
 
-$data['sh']=($table=='title')?0:1;
+if($table!='admin'){
+    $data['sh']=($table=='title')?0:1;
+}
 
 $$db->save($data);
 
