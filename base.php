@@ -1,4 +1,5 @@
 <?php
+session_start();
 $BASEDIR=$_SERVER['DOCUMENT_ROOT'];
 
 include_once $BASEDIR."/Controller/Ad.php";
@@ -49,3 +50,6 @@ $Mvim=new Mvim;
 $News=new News;
 $Admin=new Admin;
 $Menu=new Menu;
+
+
+$Total->online();
